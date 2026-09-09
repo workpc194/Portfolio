@@ -12,6 +12,7 @@ const PageTwo = () => {
   const spanRef = useRef()
   const mainAboutRef = useRef()
 
+
   useGSAP(() => {
 
     const mm = gsap.matchMedia()
@@ -43,7 +44,7 @@ const PageTwo = () => {
     }, 'anim')
     tl.to(H2Ref.current, {
       opacity: 0,
-      display: 'none',
+      // display: 'none',
       duration: 0.2
     }, 'anim')
     tl.to(H2Ref.current, {
@@ -54,13 +55,26 @@ const PageTwo = () => {
     }, 'anim')
     tl.from(mainAboutRef.current, {
       scale: 0.1,
-      opacity: 0
+      opacity: 0,
     }, 'anim')
 
     return ()=>{
       tl.kill()
     }
 
+    })
+
+    mm.add('(max-width: 600px)', ()=>{
+      gsap.from(mainAboutRef.current, {
+      scale: 0.1,
+      opacity: 0,
+      scrollTrigger:{
+        trigger: '#about',
+        scrub: 2,
+        pin: true,
+        end: '+=1500'
+      }
+    })
     })
   }, [])
 

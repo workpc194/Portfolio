@@ -43,7 +43,18 @@ html, body{
     -webkit-background-clip: text;
 }
 
+@media screen and (max-width: 930px) {
+    #main-about p{
+        font-size: 2vw;
+    }
+}
+
 @media screen and (max-width: 600px) {
+
+    #loader h1{
+        font-size: 7vw;
+    }
+
     nav{
         height: 50px;
     }
@@ -61,7 +72,7 @@ html, body{
     }
 
     #hero h1{
-        font-size: 6vw;
+        font-size: 7vw;
     }
 
     #about h3{
@@ -97,5 +108,8 @@ html, body{
 @media screen and (max-width: 370px) {
     nav h1{
         font-size: 12px;
+    }
+    #main-about div{
+        margin-top: 2%;
     }
 }
