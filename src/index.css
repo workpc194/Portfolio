@@ -1,0 +1,101 @@
+@font-face {
+    font-family: AsgardRegular;
+    src: url('./content/font/AsgardTrial-FitRegular.ttf');
+}
+
+@font-face {
+    font-family: PoppinsRegular;
+    src: url('./content/font/Poppins-Regular.ttf');
+}
+
+@import "tailwindcss";
+
+@theme{
+    --font-asgard: AsgardRegular, 'sans-serif';
+    --font-poppins: PoppinsRegular, 'sans-serif';
+}
+
+html, body{
+    scroll-behavior: smooth;
+}
+
+#nav-icon:hover #nav-links{
+    display: block;
+    animation: move;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes move {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+#about h3 span{
+    background: #fff;
+    -webkit-text-stroke: 4px transparent;
+    -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 600px) {
+    nav{
+        height: 50px;
+    }
+
+    nav h1{
+        font-size: 18px;
+    }
+
+    #nav-links{
+        width: 80px;
+    }
+
+    #nav-links ul{
+        flex-direction: column;
+    }
+
+    #hero h1{
+        font-size: 6vw;
+    }
+
+    #about h3{
+        display: none;
+    }
+
+    #main-about{
+        display: flex;
+    }
+
+    #main-about div{
+        flex-direction: column;
+        margin-top: 6%;
+    }
+
+    #main-about div div{
+        width: 100%;
+    }
+
+    #about-img{
+        width: 60%;
+    }
+
+    #main-about h2{
+        font-size: 6vw;
+    }
+
+    #main-about p{
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    nav h1{
+        font-size: 12px;
+    }
+}
