@@ -8,15 +8,25 @@
     src: url('./content/font/Poppins-Regular.ttf');
 }
 
+@font-face {
+    font-family: MontserratRegular;
+    src: url('./content/font/Montserrat-Regular.otf');
+}
+
 @import "tailwindcss";
 
 @theme{
     --font-asgard: AsgardRegular, 'sans-serif';
     --font-poppins: PoppinsRegular, 'sans-serif';
+    --font-montserrat: MontserratRegular, 'sans-serif';
 }
 
 html, body{
     scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
 }
 
 #nav-icon:hover #nav-links{

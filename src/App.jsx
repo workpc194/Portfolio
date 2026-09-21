@@ -4,6 +4,7 @@ import PageThree from './components/PageThree'
 import NavBar from './components/NavBar'
 import Loader from './components/Loader'
 import LnsFile from './LnsFile'
+import PageFour from './components/PageFour'
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
           <PageOne />
           <PageTwo />
           <PageThree />
+          <PageFour />
         </div>
       </LnsFile>
     </div>
