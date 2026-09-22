@@ -60,9 +60,9 @@ const PageThree = () => {
 
     mediaQuery.addEventListener('change', handleResize)
     pointerQuery.addEventListener('change', handleResize)
-    return()=>{
-    mediaQuery.removeEventListener('change', handleResize)
-    pointerQuery.removeEventListener('change', handleResize)
+    return () => {
+      mediaQuery.removeEventListener('change', handleResize)
+      pointerQuery.removeEventListener('change', handleResize)
     }
   }, [])
 
@@ -88,16 +88,10 @@ const PageThree = () => {
       >
         <SwiperSlide>
           <a href="https://coruscating-dragon-416ef5.netlify.app/" target='_blank'>
-            <div className='card w-full overflow-auto h-full' onMouseEnter={() => {
-              if (window.innerWidth > 600) {
-                setHoveredCard(1)
-              }
-            }}
-              onMouseLeave={() => {
-                if (window.innerWidth > 600) {
-                  setHoveredCard(null)
-                }
-              }}>
+            <div className='card w-full overflow-auto h-full' onMouseEnter={
+              !isPhone ? () => handleMouseEnter(1) : undefined}
+              onMouseLeave={
+                !isPhone ? handleMouseLeave : undefined}>
               <img src={cards[0].img} className='w-full h-full select-none' />
               {hoveredCard === 1 && (
                 <div className='w-60 bg-white opacity-60 text-black p-4 rounded-2xl flex flex-col top-15 left-3 absolute items-center justify-center'>
@@ -120,7 +114,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(2)
               }
-              }}
+            }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -148,7 +142,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(3)
               }
-              }}
+            }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -176,7 +170,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(4)
               }
-              }}
+            }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -204,7 +198,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(5)
               }
-              }}
+            }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -232,7 +226,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(6)
               }
-              }}
+            }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
