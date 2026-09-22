@@ -7,7 +7,7 @@ import { EffectCards } from 'swiper/modules';
 const PageThree = () => {
 
   const [hoveredCard, setHoveredCard] = useState()
-  const [isDesktop, setIsDesktop] = useState(window.matchMedia('(min-width: 600px)').matches)
+  const [isPhone, setIsPhone] = useState(window.matchMedia('(min-width: 600px)').matches || window.matchMedia('(pointer: coarse)'))
 
   let cards = [
     {
@@ -49,26 +49,31 @@ const PageThree = () => {
   ]
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 600px)')
-    const handleResize = (event) => {
-      setIsDesktop(event.matches)
-      if (!event.matches) {
+    const mediaQuery = window.matchMedia('(max-width: 600px)')
+    const pointerQuery = window.matchMedia('(pointer: coarse)')
+    const handleResize = () => {
+      setIsPhone(mediaQuery.matches || pointerQuery.matches)
+      if (mediaQuery.matches || pointerQuery.matches) {
         setHoveredCard(null)
       }
     }
 
     mediaQuery.addEventListener('change', handleResize)
+    pointerQuery.addEventListener('change', handleResize)
+    return()=>{
     mediaQuery.removeEventListener('change', handleResize)
+    pointerQuery.removeEventListener('change', handleResize)
+    }
   }, [])
 
   const handleMouseEnter = (id) => {
-    if (isDesktop) {
+    if (!isPhone) {
       setHoveredCard(id)
     }
   }
 
   const handleMouseLeave = () => {
-    if (isDesktop) {
+    if (!isPhone) {
       setHoveredCard(null)
     }
   }

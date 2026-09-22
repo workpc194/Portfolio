@@ -17,7 +17,7 @@ const PageTwo = () => {
 
     const mm = gsap.matchMedia()
 
-    mm.add('(min-width: 600px)', ()=>{
+    mm.add('(min-width: 601px)', ()=>{
 
     gsap.to(H2Ref.current, {
       opacity: 100, 
