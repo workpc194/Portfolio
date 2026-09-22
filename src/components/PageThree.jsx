@@ -7,7 +7,7 @@ import { EffectCards } from 'swiper/modules';
 const PageThree = () => {
 
   const [hoveredCard, setHoveredCard] = useState()
-  const [isPhone, setIsPhone] = useState(window.matchMedia('(min-width: 600px)').matches || window.matchMedia('(pointer: coarse)'))
+  const [isDesktop, setIsDesktop] = useState(window.matchMedia('(min-width: 600px)').matches)
 
   let cards = [
     {
@@ -49,31 +49,26 @@ const PageThree = () => {
   ]
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 600px)')
-    const pointerQuery = window.matchMedia('(pointer: coarse)')
-    const handleResize = () => {
-      setIsPhone(mediaQuery.matches || pointerQuery.matches)
-      if (mediaQuery.matches || pointerQuery.matches) {
+    const mediaQuery = window.matchMedia('(min-width: 600px)')
+    const handleResize = (event) => {
+      setIsDesktop(event.matches)
+      if (!event.matches) {
         setHoveredCard(null)
       }
     }
 
     mediaQuery.addEventListener('change', handleResize)
-    pointerQuery.addEventListener('change', handleResize)
-    return () => {
-      mediaQuery.removeEventListener('change', handleResize)
-      pointerQuery.removeEventListener('change', handleResize)
-    }
+    mediaQuery.removeEventListener('change', handleResize)
   }, [])
 
   const handleMouseEnter = (id) => {
-    if (!isPhone) {
+    if (isDesktop) {
       setHoveredCard(id)
     }
   }
 
   const handleMouseLeave = () => {
-    if (!isPhone) {
+    if (isDesktop) {
       setHoveredCard(null)
     }
   }
@@ -88,10 +83,16 @@ const PageThree = () => {
       >
         <SwiperSlide>
           <a href="https://coruscating-dragon-416ef5.netlify.app/" target='_blank'>
-            <div className='card w-full overflow-auto h-full' onMouseEnter={
-              !isPhone ? () => handleMouseEnter(1) : undefined}
-              onMouseLeave={
-                !isPhone ? handleMouseLeave : undefined}>
+            <div className='card w-full overflow-auto h-full' onMouseEnter={() => {
+              if (window.innerWidth > 600) {
+                setHoveredCard(1)
+              }
+            }}
+              onMouseLeave={() => {
+                if (window.innerWidth > 600) {
+                  setHoveredCard(null)
+                }
+              }}>
               <img src={cards[0].img} className='w-full h-full select-none' />
               {hoveredCard === 1 && (
                 <div className='w-60 bg-white opacity-60 text-black p-4 rounded-2xl flex flex-col top-15 left-3 absolute items-center justify-center'>
@@ -114,7 +115,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(2)
               }
-            }}
+              }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -142,7 +143,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(3)
               }
-            }}
+              }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -170,7 +171,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(4)
               }
-            }}
+              }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -198,7 +199,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(5)
               }
-            }}
+              }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
@@ -226,7 +227,7 @@ const PageThree = () => {
               if (window.innerWidth > 600) {
                 setHoveredCard(6)
               }
-            }}
+              }}
               onMouseLeave={() => {
                 if (window.innerWidth > 600) {
                   setHoveredCard(null)
