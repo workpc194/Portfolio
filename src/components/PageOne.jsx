@@ -8,11 +8,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 const PageOne = () => {
 
-    useGSAP(()=>{
+    useGSAP(() => {
         gsap.to('#hero', {
             y: 300,
             ease: 'none',
-            scrollTrigger:{
+            scrollTrigger: {
                 trigger: '#hero',
                 start: 'top top',
                 end: 'bottom top',
@@ -24,9 +24,9 @@ const PageOne = () => {
     return (
         <>
             <div id="hero" data-scroll data-scroll-speed='-1' className='h-screen flex z-3 items-center justify-center'>
-                    <img className='object-cover' src={vector} />
-                    <img className='h-full object-cover absolute bottom-0' src={myImage} />
-                    <h1 className='font-asgard text-6xl text-center select-none absolute top-50%'>Hello, <br />I’m Muhammad Noman</h1>
+                <img className='object-cover' src={vector} alt='Vector Image' />
+                <img className='h-full object-cover absolute bottom-0' src={myImage} alt='Home Page Noman Photo' />
+                <h1 className='font-asgard text-6xl text-center select-none absolute top-50%'>Hello, <br />I’m Muhammad Noman</h1>
             </div>
         </>
     )

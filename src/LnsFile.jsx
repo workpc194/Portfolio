@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const LnsFile = ({children}) => {
+const LnsFile = ({ children }) => {
 
     useEffect(() => {
         const lenis = new Lenis({
@@ -16,11 +16,11 @@ const LnsFile = ({children}) => {
         lenis.on('scroll', ScrollTrigger.update);
 
         gsap.ticker.add((time) => {
-            lenis.raf(time * 1000); 
+            lenis.raf(time * 1000);
         });
 
         gsap.ticker.lagSmoothing(0);
-    })
+    }, [])
     return children
 }
 
