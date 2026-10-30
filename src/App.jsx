@@ -1,23 +1,27 @@
-import PageOne from './components/PageOne'
-import PageTwo from './components/PageTwo'
-import PageThree from './components/PageThree'
-import NavBar from './components/NavBar'
 import Loader from './components/Loader'
 import LnsFile from './LnsFile'
-import PageFour from './components/PageFour'
+import NavBar from './components/NavBar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
+import SVGAnimation from './components/SVGAnimation'
+import ProjectInfoCard from './components/ProjectInfoCard'
 
 const App = () => {
 
   return (
-    <div className='bg-black text-white'>
+    <div className='bg-black text-white scrollbar-none'>
       <Loader />
       <LnsFile>
         <div className='w-full min-h-screen z-9 overflow-x-hidden scrollbar-none bg-black text-white'>
           <NavBar />
-          <PageOne />
-          <PageTwo />
-          <PageThree />
-          <PageFour />
+          <Hero />
+          <About />
+          <Projects />
+          <ProjectInfoCard />
+          <SVGAnimation />
+          <Footer />
         </div>
       </LnsFile>
     </div>

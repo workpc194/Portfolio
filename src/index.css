@@ -1,3 +1,4 @@
+/* Custom Fonts */
 @font-face {
     font-family: AsgardRegular;
     src: url('./content/font/AsgardTrial-FitRegular.ttf');
@@ -21,6 +22,7 @@
     --font-montserrat: MontserratRegular, 'sans-serif';
 }
 
+/* Boiler Plate */
 html,
 body {
     scroll-behavior: smooth;
@@ -30,6 +32,18 @@ li {
     list-style: none;
 }
 
+/* Selected Text and BG color Change */
+::selection {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+::-moz-selection {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Navbar */
 #nav-icon:hover #nav-links {
     display: block;
     animation: move;
@@ -37,9 +51,31 @@ li {
     animation-timing-function: ease-in-out;
 }
 
+@keyframes move {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+/* About */
+#about h3 span {
+    background: #fff;
+    -webkit-text-stroke: 4px transparent;
+    -webkit-background-clip: text;
+}
+
+/* Projects */
 .swiper {
-    /* width: 440px;
-  height: 520px; */
     width: 60%;
     height: 70%;
 }
@@ -54,76 +90,101 @@ li {
     color: #fff;
 }
 
-.swiper-slide:nth-child(1n) {
-    background-color: rgb(206, 17, 17);
+.card h3 {
+    font-size: 15px;
+    font-weight: 100;
 }
 
-.swiper-slide:nth-child(2n) {
-    background-color: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-    background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-    background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-    background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-    background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-    background-color: rgb(35, 99, 19);
-}
-
-.swiper-slide:nth-child(8n) {
-    background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-    background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-    background-color: rgb(54, 94, 77);
-}
-
-@keyframes move {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-#about h3 span {
-    background: #fff;
-    -webkit-text-stroke: 4px transparent;
-    -webkit-background-clip: text;
-}
-
+/* Media Query For Width (930px) */
 @media screen and (max-width: 930px) {
+
+    /* Loader */
+    #loader h1 {
+        font-size: 48px;
+    }
+
+    /* NavBar */
+    nav h1 {
+        font-size: 20px;
+    }
+
+    /* Hero */
+    #hero h1 {
+        font-size: 48px;
+    }
+
+    /* About */
+    #main-about h2 {
+        font-size: 60px;
+    }
+
     #main-about p {
-        font-size: 2vw;
+        font-size: 20px;
+    }
+
+    /* Project */
+    .project-h2 {
+        font-size: 36px;
+    }
+
+    .card h4 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 16px;
+    }
+
+    .project-info-card h2 {
+        font-size: 24px;
+    }
+
+    .user-benefit p {
+        font-size: 15px;
+    }
+
+    .challange h5,
+    .future h5 {
+        font-size: 20px;
+    }
+
+    .challange p,
+    .future p {
+        font-size: 15px;
+    }
+
+    /* SVG Animation */
+    .svg-animation h3 {
+        font-size: 20px;
+    }
+
+    /* Footer */
+    #contact h3 {
+        font-size: 72px;
+    }
+
+    #contact h4 {
+        font-size: 36px;
+    }
+
+    #footer h2 {
+        font-size: 20px;
+    }
+
+    #footer li a {
+        font-size: 12px;
     }
 }
 
+/* Media Query For Width (600px) */
 @media screen and (max-width: 600px) {
 
+    /* Loader */
     #loader h1 {
-        font-size: 7vw;
+        font-size: 36px;
     }
 
+    /* Navbar */
     nav {
         height: 50px;
     }
@@ -140,10 +201,12 @@ li {
         flex-direction: column;
     }
 
+    /* Hero */
     #hero h1 {
-        font-size: 7vw;
+        font-size: 36px;
     }
 
+    /* About */
     #about h3 {
         display: none;
     }
@@ -161,16 +224,21 @@ li {
         width: 100%;
     }
 
+    #main-about h2 {
+        font-size: 48px;
+    }
+
+    #main-about p {
+        font-size: 18px;
+    }
+
     #about-img {
         width: 60%;
     }
 
-    #main-about h2 {
-        font-size: 6vw;
-    }
-
-    #main-about p {
-        font-size: 3vw;
+    /* Projects */
+    .project-h2 {
+        font-size: 30px;
     }
 
     .swiper {
@@ -178,62 +246,309 @@ li {
         height: 60%;
     }
 
+    .card h4 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .project-info-card h2 {
+        font-size: 20px;
+    }
+
+    .user-benefit p {
+        font-size: 14px;
+    }
+
+    .challange h5,
+    .future h5 {
+        font-size: 18px;
+    }
+
+    .challange p,
+    .future p {
+        font-size: 14px;
+    }
+
+    /* SVG Animation */
+    .svg-animation h3 {
+        font-size: 18px;
+    }
+
+    /* Footer */
+    #contact h3 {
+        font-size: 60px;
+    }
+
+    #contact h4 {
+        font-size: 30px;
+    }
+
+    #footer h2 {
+        font-size: 18px;
+    }
+
+    #footer div {
+        width: 60%;
+    }
+
+    #footer li {
+        font-size: 10px;
+    }
+
+}
+
+/* Media Query For Width (450px) */
+@media screen and (max-width: 450px) {
+
+    /* Loader */
+    #loader h1 {
+        font-size: 30px;
+    }
+
+    /* Navbar */
+    nav {
+        padding-inline: 20px;
+    }
+
+    nav h1 {
+        font-size: 16px;
+    }
+
+    #nav-links {
+        right: 44px;
+    }
+
+    /* Hero */
+    #hero h1 {
+        font-size: 30px;
+    }
+
+    /* About */
+    #main-about h2 {
+        font-size: 36px;
+    }
+
+    #main-about p {
+        font-size: 16px;
+    }
+
+    /* Projects */
+    .project-h2 {
+        font-size: 24px;
+    }
+
+    .swiper {
+        width: 80%;
+        height: 60%;
+    }
+
+    .project-h2 {
+        padding: 20px;
+        font-size: xx-large;
+    }
+
     .card {
-        display: flex;
         flex-direction: column;
     }
 
     .card img {
+        width: 100%;
         height: 50%;
     }
 
-    #contact h3 {
-        font-size: 10vw;
+    .card :nth-child {
+        width: 100%;
+        height: 50%;
     }
 
-    #contact h4 {
-        font-size: 4vw;
+    .card h4 {
+        font-size: 16px;
     }
 
-    #footer h2 {
-        font-size: 3vw;
+    .card p {
+        font-size: 14px;
     }
 
-    #footer div {
-        width: 55%;
+    .skill-card {
+        justify-content: center;
     }
 
-    #footer li {
-        font-size: 1.5vw;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    nav h1 {
+    .project-info-card-head {
         font-size: 12px;
     }
 
-    #main-about div {
-        margin-top: 2%;
+    .project-info-card h2 {
+        font-size: 18px;
     }
-}
 
-@media screen and (max-width: 450px) {
+    .user-benefit p {
+        font-size: 13px;
+    }
 
-    #contact h3,
+    .project-info-card-btn a {
+        font-size: 12px;
+        width: 90px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .last {
+        flex-direction: column;
+    }
+
+    .challange,
+    .future {
+        width: 100%;
+    }
+
+    .challange h5,
+    .future h5 {
+        font-size: 16px;
+    }
+
+    .challange p,
+    .future p {
+        font-size: 13px;
+    }
+
+    .skill {
+        height: 30px;
+        line-height: 30px;
+        padding-inline: 10px;
+    }
+
+    .skill h3 {
+        font-size: 12px;
+    }
+
+    .card button {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    /* SVG Animation */
+    .svg-animation {
+        padding-inline: 20px;
+    }
+
+    .svg-animation h3 {
+        font-size: 16px;
+    }
+
+    .svg-container {
+        height: 100px;
+    }
+
+    /* Footer */
+    #contact {
+        margin-inline: 20px;
+    }
+
+    #contact h3 {
+        font-size: 48px;
+    }
+
     #contact h4 {
-        margin-left: 40px;
+        font-size: 24px;
     }
 
     #footer {
-        padding: 0 40px;
+        padding-right: 20px;
     }
 
     #footer h2 {
-        font-size: 2vw;
+        font-size: 16px;
     }
 
-    #footer li {
-        font-size: 1vw;
+    #footer li a {
+        font-size: 8px;
+    }
+}
+
+/* Media Query For Width (370px) */
+@media screen and (max-width: 370px) {
+
+    /* Loader */
+    #loader h1 {
+        font-size: 28px;
+    }
+
+    /* Navbar */
+    nav h1 {
+        font-size: 15px;
+    }
+
+    /* Hero */
+    #hero h1 {
+        font-size: 28px;
+    }
+
+    /* About */
+    #main-about div {
+        margin-top: 2%;
+    }
+
+    #main-about h2 {
+        font-size: 30px;
+    }
+
+    #main-about p {
+        font-size: 14px;
+    }
+
+    /* Project */
+    .project-h2 {
+        font-size: 22px;
+    }
+
+    .card h4 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .project-info-card h2 {
+        font-size: 16px;
+    }
+
+    .user-benefit p {
+        font-size: 12px;
+    }
+
+    .challange h5,
+    .future h5 {
+        font-size: 15px;
+    }
+
+    .challange p,
+    .future p {
+        font-size: 12px;
+    }
+
+    /* SVG Animation */
+    .svg-animation h3 {
+        font-size: 15px;
+    }
+
+    /* Footer */
+    #contact h3 {
+        font-size: 36px;
+    }
+
+    #contact h4 {
+        font-size: 20px;
+    }
+
+    #footer h2 {
+        font-size: 15px;
+    }
+
+    #footer li a {
+        font-size: 7px;
     }
 }
