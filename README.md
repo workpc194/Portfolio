@@ -3,7 +3,7 @@
 A modern, animated personal portfolio website built with **React 19**, **Vite**, and **Tailwind CSS**.  
 Showcasing my projects, skills, and journey as a frontend developer.
 
-**Live Demo:** [https://portfolio-alpha-two-ov7v2nc6bp.vercel.app/](https://portfolio-alpha-two-ov7v2nc6bp.vercel.app/)
+**Live Demo:** [thedeveloper-noman.vercel.app](https://thedeveloper-noman.vercel.app/)
 
 ---
 
