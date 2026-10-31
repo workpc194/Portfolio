@@ -32,7 +32,7 @@ const Card = (item) => {
 
     return (
         <div ref={cardRef} className='card w-full h-full flex rounded-2xl items-center justify-center'>
-            <img ref={imgRef} src={item.elem.img} alt='First Project SS' className='w-[50%] object-cover rounded-l-2xl select-none' />
+            <img ref={imgRef} src={item.elem.img} alt='First Project SS' loading='lazy' className='w-[50%] object-cover rounded-l-2xl select-none' />
             <div ref={cardTextRef} className='w-[50%] h-full bg-black text-white border-r rounded-r-2xl py-2 flex flex-col items-center justify-evenly'>
                 <h4 className='font-asgard'>{item.elem.heading}</h4>
                 <p className='text-lg text-center font-poppins font-normal pt-2'>{item.elem.mini_description}</p>

@@ -90,7 +90,7 @@ const About = () => {
                         <p className="font-poppins text-2xl opacity-80 mt-10">Hi, I’m Muhammad Noman. I turn static designs into interactive digital environments. By combining clean React architecture with advanced animation libraries like GSAP, I craft fluid, high-fidelity websites that hold attention and feel seamless to explore.</p>
                     </div>
                     <div id="about-img" className="w-[34%] select-none">
-                        <img className="object-cover rounded-2xl" src={myImage} alt="About Section Noman Image" />
+                        <img className="object-cover rounded-2xl" loading="lazy" src={myImage} alt="About Section Noman Image" />
                     </div>
                 </div>
             </div>
