@@ -31,7 +31,7 @@ const ProjectInfoCard = () => {
         <div ref={projectInfoRef} className='project-info-card w-full h-screen hidden z-10 fixed top-0 right-0 '>
             <div className='w-full h-full bg-black opacity-80 flex items-center justify-center'></div>
             {/* <div className='absolute inset-0 bg-black opacity-80 pointer-events-none'></div> */}
-            <div className='w-[80%] h-[70%] z-20 overflow-y-auto scrollbar-thin  bg-black px-5 border-2 rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100'>
+            <div className='w-[80%] h-[70%] z-20 overflow-y-auto scrollbar-none bg-black px-5 shadow-[5px_5px_30px_white] rounded-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100'>
                 <div className='project-info-card-head w-full h-11 flex items-center justify-between'>
                     Project Detailed BreakDown
                     <button onClick={hidden}><X size={20} /></button>
